@@ -1,0 +1,18 @@
+# Real time Scenarios
+- Scenario 01
+- Scenario 02
+- Scenario 03
+- Scenario 04
+
+## Scenario 01: Execute 'COPY ACTIVITY' when the file becomes available using Control-Flow Activity in ADF
+In order to achieve this scenario, we have to use the 'Validation' activity under the 'General' catagory.
+Steps:
+- Add the 'Validation' activity in the pipeline workpace.
+- Configure it.
+  - Provide the name of the Validation activity
+  - Point to the Data Set which the Validation is watch it.
+  - Set the Time in the form of [ days.hours.minute.second ]
+  - Set the Interval of the time which the validation activity will look for the file at a frequency. say 10sec, 100 seco, etc.
+- Post Configuration.
+  - Connect to the pipeline 'On completion' or 'On success'
+  - Connect to the other activity 'On fail'
