@@ -16,3 +16,27 @@ Steps:
 - Post Configuration.
   - Connect to the pipeline 'On completion' or 'On success'
   - Connect to the other activity 'On fail'
+ 
+## Scenario 02: Execute 'Copy Activity' only if the file contents are as expected
+
+## Scenario 03: Delete the File once the pipeline is completed
+Here we use Delete activity inside the If activity
+
+
+# Triggers
+In the production level scenario, this pipeline has to run automaton. In order to make the automation, we can configure the Trigger points. The pipeline can  be triggered from 3 different ways:
+- Schedule trigger
+- Tumbling window trigger
+- Event Trigger
+
+| IMPORTAND
+Difference between the Schedule trigger and Tumbling trigger
+Schedule trigger:
+Schedule triggers run pipelines on fixed recurring schedules like cron jobs, while tumbling window triggers process data in non-overlapping time slices with advanced dependency and backfill support.
+
+## When to Use:
+### Schedule Trigger: 
+  Simple periodic jobs without data slicing or dependencies. "Use for daily reports or non-time-partitioned ETL where backfill isn't needed—e.g., nightly full backup."
+### Tumbling Window: 
+  Streaming-like batch processing with time windows, dependencies, or re-runs. "Ideal for hourly data lake ingestion where downstream pipelines depend on prior window success, or backfilling missed runs."
+​
